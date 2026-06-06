@@ -1,0 +1,8 @@
+script/pom/OrderPage.class
+script/reusablecomponents/AbstractComponent.class
+script/pom/LandingPage.class
+script/resource/ExtentReporterNG.class
+script/pom/ProductCatalogue.class
+script/pom/ConfirmationPage.class
+script/pom/CartPage.class
+script/pom/CheckOutPage.class
