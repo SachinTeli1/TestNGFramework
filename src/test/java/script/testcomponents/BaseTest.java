@@ -44,18 +44,20 @@ public class BaseTest {
 		        : prop.getProperty("browser");
 		browserName = browserName.toLowerCase();
 
-		if (browserName.contains("chrome")) {
-			ChromeOptions options = new ChromeOptions();
-			WebDriverManager.chromedriver().setup();
+		if(browserName.contains("chrome")) {
 
-			if (browserName.contains("headless")) {
-				options.addArguments("--headless=new");
-				options.addArguments("--no-sandbox");
-				options.addArguments("--disable-dev-shm-usage");
-				options.addArguments("--remote-allow-origins=*");
-			}
-			driver = new ChromeDriver(options);
-			driver.manage().window().setSize(new Dimension(1440, 900));
+		    ChromeOptions options = new ChromeOptions();
+
+		    if(browserName.contains("headless")) {
+
+		        options.addArguments("--headless=new");
+		        options.addArguments("--no-sandbox");
+		        options.addArguments("--disable-dev-shm-usage");
+		        options.addArguments("--window-size=1920,1080");
+		    }
+
+		    WebDriverManager.chromedriver().setup();
+		    driver = new ChromeDriver(options);
 		}
 
 		else if (browserName.equalsIgnoreCase("firefox")) {
@@ -70,6 +72,10 @@ public class BaseTest {
 		}
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+		if(!browserName.contains("headless")) {
+		    driver.manage().window().maximize();
+		}
 		return driver;
 	}
 
