@@ -13,10 +13,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class StandAloneTest {
-
-	public static void main(String[] args) throws InterruptedException {
-
+public class StandAloneTest 
+{
+	public static void main(String[] args) throws InterruptedException 
+	{
 		String productName = "IPHONE 13 PRO";
 
 		WebDriver driver = new ChromeDriver();
