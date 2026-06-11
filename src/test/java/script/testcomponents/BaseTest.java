@@ -39,6 +39,7 @@ public class BaseTest {
 		// System.getProperty("user.dir") --> This will provide location of
 		// SeleniumFramework project path dynamically.
 		prop.load(fis);
+		
 		String browserName = System.getProperty("browser") != null
 		        ? System.getProperty("browser")
 		        : prop.getProperty("browser");
